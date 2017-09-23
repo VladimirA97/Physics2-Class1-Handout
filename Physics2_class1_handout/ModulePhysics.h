@@ -5,11 +5,11 @@
 #define GRAVITY_X 0.0f
 #define GRAVITY_Y -7.0f
 
-#define PIXELS_PER_METER 50.0f// if touched change METER_TO_PIXELS too
-#define METER_PER_PIXEL 0.02f// this is 1 / PEXELS_PER_METER !
+#define PIXELS_PER_METER 50.0f // if touched change METER_TO_PIXELS too
+#define METER_PER_PIXEL 0.02f // this is 1 / PEXELS_PER_METER !
 
+#define PIXELS_TO_METERS(p) ((float) METER_PER_PIXEL * p)
 #define METERS_TO_PIXELS(m) ((int) floor(PIXELS_PER_METER * m))
-#define PIXEL_PER_METER(p) ((float) METER_TO_PIXELS  *p)
 
 class b2World; //instead of including box2d.h
 class ModulePhysics : public Module
@@ -24,6 +24,6 @@ public:
 	bool CleanUp();
 
 private:
-	b2World* world;
 	bool debug;
+	b2World* world;
 };
